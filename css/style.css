@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #eeeeee;
+}
+
+.info > .header {
+  color: #00adb5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Praise', cursive;
+  letter-spacing: 5px;
+  font-size: 30px;
+}
+
+main {
+  width: 80%;
+  margin: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ab {
+  color: #222831;
+  margin-left: 3%;
+  display: flex;
+}
+
+.name {
+  font-family: 'Praise', cursive;
+  font-size: 25px;
+}
+.col {
+  box-sizing: border-box;
+  height: 25px;
+  width: 60px;
+  border: 2px solid #393e46;
+  margin-right: 25px;
+}
+.gr .col {
+  background-color: green;
+}
+
+.gre .col {
+  background-color: yellow;
+}
+
+.pre .col {
+  background-color: red;
+}
+
+.hum .col {
+  background-color: blue;
+}
+
+.bomb .col {
+  background-color: black;
+}
+
+main {
+  margin-bottom: 10%;
+}
