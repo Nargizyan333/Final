@@ -1,4 +1,7 @@
-class GrassEater extends LivingCreature {
+const LivingCreature = require('./LivingCreature')
+const random = require("./random");
+
+module.exports = class GrassEater extends LivingCreature {
   constructor(x, y) {
     super(x, y);
     this.en = 6;

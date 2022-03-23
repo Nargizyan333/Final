@@ -1,4 +1,7 @@
-class Human extends LivingCreature {
+const LivingCreature = require('./LivingCreature')
+const random = require("./random");
+
+module.exports = class Human extends LivingCreature {
   constructor(x, y) {
     super(x, y);
     this.en = 95;
