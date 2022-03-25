@@ -4,56 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Game of life</title>
+    <title>Programming III</title>
   </head>
   <body>
-    <div class="info">
-      <div class="header">
-        <h1>Game of Life</h1>
-      </div>
-      <div class="about">
-        <div class="ab gr">
-          <div class="col"></div>
-          <p><span class="name">Grass: </span> Բազմանում է ամեն 4 տակտը մեկ։</p>
-        </div>
-        <div class="ab gre">
-          <div class="col"></div>
-          <p>
-            <span class="name">Grass Eater: </span> Հնարավորության դեպքում
-            ուտում է խոտը, եթե ոչ ՝շարժվում։ Եթե էներգիայի արժեքը մեծ է 15-ից
-            բազմանում է
-          </p>
-        </div>
-        <div class="ab pre">
-          <div class="col"></div>
-          <p>
-            <span class="name">Predator: </span>Հնարավորության դեպքում ուտում է
-            խոտակերին, եթե ոչ ՝ շարժվում։ Եթե չի շարժվել 2 տակտից ավել, ապա
-            շարժվում է խոտերի վրայով։ Եթե էներգիայի արժեքը մեծ է 25-ից բազմանում
-            է
-          </p>
-        </div>
-        <div class="ab hum">
-          <div class="col"></div>
-          <p>
-            <span class="name">Human: </span>Ուտում է և՛ խոտակերին, և՛ գիշատչին։
-            Եթե ոչ փորձում է շարժվել դատարկ վանդակներով։ Եթե չի ստացվում,
-            շարժվում է խոտերի վրայով։ Ապրոում է 150 տակտից ոչ ավել։ Եթե
-            էներգիայի արժեքը մեծ է 125-ից բազմանում է
-          </p>
-        </div>
-        <div class="ab bomb">
-          <div class="col"></div>
-          <p>
-            <span class="name">Bomb: </span>Պայթեցնում է շրջակայքում ամեն ինչ։
-            Պայթում է ամեն 8 տակտը մեկ,տևում է 2 տակտ։
-          </p>
-        </div>
-      </div>
-    </div>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
