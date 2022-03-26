@@ -4,9 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Programming III</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Character</th>
+                <th scope="col">Counter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Grass</td>
+                <td id="grass"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Grass Eater</td>
+                <td id="grassEater"></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Predator</td>
+                <td id="predator"></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Human</td>
+                <td id="human"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Bomb</td>
+                <td id="bomb"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <script src="p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>

@@ -5,6 +5,20 @@ function setup() {
   let matrix = []
 
   socket.on('data', cons)
+  socket.on('data', uptadeData)
+
+  function uptadeData(data) {
+    const grass = document.getElementById('grass')
+    grass.innerText = data.grassCounter
+    const grassEater = document.getElementById('grassEater')
+    grassEater.innerText = data.grassEaterCounter
+    const predator = document.getElementById('predator')
+    predator.innerText = data.predatorCounter
+    const human = document.getElementById('human')
+    human.innerText = data.humanCounter
+    const bomb = document.getElementById('bomb')
+    bomb.innerText = data.bombCounter
+  }
 
   function cons(data) {
     matrix = data.matrix

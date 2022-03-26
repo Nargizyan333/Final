@@ -41,7 +41,7 @@ module.exports = class GrassEater extends LivingCreature {
           break
         }
       }
-      if (this.en > 30) {
+      if (this.en > 25) {
         this.mul()
       }
     } else {

@@ -71,13 +71,14 @@ function createMatrix(size, grass, grasseater, predator, human, bomb) {
     }
   }
 }
-createMatrix(50, 1000, 3, 3, 3, 0)
+createMatrix(50, 2000, 10, 2, 5, 10)
 
 const express = require('express')
 const app = express()
 const http = require('http')
 const server = http.Server(app)
 const io = require('socket.io')(server)
+const fs = require('fs')
 
 app.use(express.static('.'))
 
@@ -144,8 +145,28 @@ function game() {
   }
   let sendData = {
     matrix: matrix,
+    grassCounter: grassArr.length,
+    grassEaterCounter: grassEaterArr.length,
+    predatorCounter: predatorArr.length,
+    humanCounter: humanArr.length,
+    bombCounter: bombArr.length,
   }
   io.sockets.emit('data', sendData)
 }
 
 setInterval(game, 250)
+
+const statistics = {}
+
+function getStatistics() {
+  statistics.grass = grassArr.length
+  statistics.grassEater = grassEaterArr.length
+  statistics.predator = predatorArr.length
+  statistics.human = humanArr.length
+  statistics.bomb = bombArr.length
+}
+
+setInterval(() => {
+  getStatistics()
+  fs.writeFile('statistics.json', JSON.stringify(statistics), function () {})
+}, 1000)

@@ -1,9 +1,9 @@
 const LivingCreature = require('./LivingCreature')
 
 module.exports = class Bomb extends LivingCreature {
-  constructor(x, y, t) {
+  constructor(x, y) {
     super(x, y)
-    this.t = t
+    this.t = Math.round(Math.random() * 9)
     this.dir = [
       [x - 2, y - 2],
       [x - 1, y - 2],
@@ -46,7 +46,7 @@ module.exports = class Bomb extends LivingCreature {
 
   boom() {
     this.t++
-    if (this.t == 8) {
+    if (this.t == 10) {
       let a = 0
       while (a < this.dir.length) {
         let x = this.dir[a][0]
@@ -88,7 +88,7 @@ module.exports = class Bomb extends LivingCreature {
         a++
       }
     }
-    if (this.t == 9) {
+    if (this.t == 11) {
       let a = 0
       while (a < this.dir.length) {
         let x = this.dir[a][0]
@@ -101,7 +101,7 @@ module.exports = class Bomb extends LivingCreature {
         a++
       }
     }
-    if (this.t == 10) {
+    if (this.t == 12) {
       let a = 0
       while (a < this.dir.length) {
         let x = this.dir[a][0]
