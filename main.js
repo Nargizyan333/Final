@@ -1,5 +1,7 @@
-function setup() {
+
   const socket = io()
+
+function setup() {
   const side = 20
   let weath = 'spring'
 
@@ -65,4 +67,8 @@ function setup() {
   }
   frameRate(120)
   background('#000')
+}
+
+function kill() {
+  socket.emit('kill')
 }

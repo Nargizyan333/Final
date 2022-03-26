@@ -197,3 +197,19 @@ setInterval(() => {
   getStatistics()
   fs.writeFile('statistics.json', JSON.stringify(statistics), function () {})
 }, 1000)
+
+io.on('connection', function(socket){
+  socket.on('kill', () => {
+    grassArr = []
+    grassEaterArr = []
+    predatorArr = []
+    humanArr = []
+    for(let y = 0; y < matrix.length; y++){
+      for(let x = 0; x < matrix[0].length; x++){
+        if(matrix[y][x] != 5) {
+          matrix[y][x] = 0
+        }
+      }
+    }
+  })
+})
