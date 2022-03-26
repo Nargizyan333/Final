@@ -89,7 +89,7 @@ module.exports = class GrassEater extends LivingCreature {
     if (this.en < 0) {
       this.die()
     } else {
-      if (this.en > 25) {
+      if ((this.en > 40 && weath == 'winter') || (this.en > 25 && weath != 'winter')) {
         this.mul()
       } else {
         this.eat()

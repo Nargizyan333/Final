@@ -108,7 +108,7 @@ module.exports = class Predator extends LivingCreature {
     if (this.en < 0) {
       this.die()
     } else {
-      if (this.en > 25) {
+      if ((this.en > 25 && weath != 'winter') || (this.en > 30 && weath == 'winter')) {
         this.mul()
       } else {
         this.eat()

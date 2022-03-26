@@ -117,11 +117,14 @@ module.exports = class Human extends LivingCreature {
   }
 
   chooseOption() {
-    this.age += 0.5;
+    if(weath != 'winter')
+      this.age += 0.5;
+    else
+      this.age += 0.75
     if (this.en < 0 || this.age > 75) {
       this.die();
     } else {
-      if (this.en > 125) {
+      if ((this.en > 120 && weath != 'winter') || (this.en > 135 && weath == 'winter')) {
         this.mul();
       } else {
         this.eat();

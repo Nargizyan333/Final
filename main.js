@@ -1,11 +1,15 @@
 function setup() {
   const socket = io()
   const side = 20
+  let weath = 'spring'
 
   let matrix = []
 
   socket.on('data', cons)
   socket.on('data', uptadeData)
+  socket.on('weather', (data) => {
+    weath = data
+  })
 
   function uptadeData(data) {
     const grass = document.getElementById('grass')
@@ -26,7 +30,15 @@ function setup() {
     for (var y = 0; y < matrix.length; y++) {
       for (var x = 0; x < matrix[y].length; x++) {
         if (matrix[x][y] == 1) {
-          fill('green')
+          if(weath == 'spring') {
+            fill('green')
+          } else if (weath == 'summer') {
+            fill('#856004')
+          } else if (weath == 'fall') {
+            fill('#ebaa07')
+          } else {
+            fill('white')
+          }
         } else if (matrix[x][y] == 2) {
           fill('yellow')
         } else if (matrix[x][y] == 3) {
@@ -34,7 +46,10 @@ function setup() {
         } else if (matrix[x][y] == 4) {
           fill('blue')
         } else if (matrix[x][y] == 5) {
-          fill('black')
+          if(weath != 'winter')
+            fill('black')
+          else
+            fill('#6b6b6b')
         } else if (matrix[x][y] == 8) {
           fill('#ffad14')
         } else if (matrix[x][y] == 9) {

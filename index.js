@@ -2,7 +2,7 @@ let Grass = require('./modules/Grass.js')
 let GrassEater = require('./modules/GrassEater.js')
 let Predator = require('./modules/Predator.js')
 let Human = require('./modules/Human.js')
-let Bomb = require('./modules/Bomb.js')
+let Bomb = require('./modules/Bomb')
 let random = require('./modules/random')
 
 matrix = []
@@ -11,6 +11,31 @@ grassEaterArr = []
 predatorArr = []
 humanArr = []
 bombArr = []
+weath = 'spring'
+
+function sendWeather() {
+  io.sockets.emit('weather', weath)
+}
+
+function weather() {
+  if (weath == "winter") {
+      weath = "spring"
+  }
+  else if (weath == "spring") {
+      weath = "summer"
+  }
+  else if (weath == "summer") {
+      weath = "fall"
+  }
+  else if (weath == "fall") {
+      weath = "winter"
+  }
+  sendWeather()
+}
+
+setInterval(sendWeather, 10)
+setInterval(weather, 7500);
+
 
 function createMatrix(size, grass, grasseater, predator, human, bomb) {
   for (let i = 0; i < size; i++) {
@@ -86,8 +111,8 @@ app.get('/', (req, res) => {
   res.redirect('index.html')
 })
 
-io.on('connecrion', function (socket) {
-  socket.on('hi', console.log(hi))
+io.on('connection', function (socket) {
+  // socket.on('hi', console.log(hi))
 })
 
 server.listen(3000)
@@ -119,8 +144,10 @@ createObjs()
 
 function game() {
   if (grassArr[0] !== undefined) {
-    for (let i in grassArr) {
-      grassArr[i].mul()
+    if(weath != 'winter') {
+      for (let i in grassArr) {
+        grassArr[i].mul()
+      }
     }
   }
   if (grassEaterArr[0] !== undefined) {

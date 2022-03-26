@@ -14,3 +14,7 @@ body {
 body {
   background-color: #eeeeee;
 }
+
+canvas {
+  margin: 50px 0 100px 30%;
+}
