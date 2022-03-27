@@ -1,5 +1,4 @@
-
-  const socket = io()
+const socket = io()
 
 function setup() {
   const side = 20
@@ -32,7 +31,7 @@ function setup() {
     for (var y = 0; y < matrix.length; y++) {
       for (var x = 0; x < matrix[y].length; x++) {
         if (matrix[x][y] == 1) {
-          if(weath == 'spring') {
+          if (weath == 'spring') {
             fill('green')
           } else if (weath == 'summer') {
             fill('#856004')
@@ -48,10 +47,8 @@ function setup() {
         } else if (matrix[x][y] == 4) {
           fill('blue')
         } else if (matrix[x][y] == 5) {
-          if(weath != 'winter')
-            fill('black')
-          else
-            fill('#6b6b6b')
+          if (weath != 'winter') fill('black')
+          else fill('#6b6b6b')
         } else if (matrix[x][y] == 8) {
           fill('#ffad14')
         } else if (matrix[x][y] == 9) {
@@ -71,4 +68,24 @@ function setup() {
 
 function kill() {
   socket.emit('kill')
+}
+
+function addGrass() {
+  socket.emit('addGrass')
+}
+
+function addGrassEater() {
+  socket.emit('addGrassEater')
+}
+
+function addPredator() {
+  socket.emit('addPredator')
+}
+
+function addHuman() {
+  socket.emit('addHuman')
+}
+
+function addBomb() {
+  socket.emit('addBomb')
 }
