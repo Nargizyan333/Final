@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Praise&display=swap");
 
 * {
   padding: 0;
@@ -16,5 +16,6 @@ body {
 }
 
 canvas {
-  margin: 50px 0 100px 30%;
+  margin: 150px;
+  margin-right: 0;
 }
