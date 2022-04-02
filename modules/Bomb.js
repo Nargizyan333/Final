@@ -1,5 +1,4 @@
 const LivingCreature = require("./LivingCreature");
-const Pgrass = require("./Pgrass");
 
 module.exports = class Bomb extends LivingCreature {
   constructor(x, y) {
@@ -77,13 +76,6 @@ module.exports = class Bomb extends LivingCreature {
           for (let i in humanArr) {
             if (x == humanArr[i].x && y == humanArr[i].y) {
               humanArr.splice(i, 1);
-              break;
-            }
-          }
-        } else if (matrix[y][x] == 6) {
-          for (let i in pGrassArr) {
-            if (x == pGrassArr[i].x && y == pGrassArr[i].y) {
-              pGrassArr.splice(i, 1);
               break;
             }
           }
